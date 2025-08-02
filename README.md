@@ -93,24 +93,26 @@ Modern, clean, and responsive UI designed to be mobile and desktop friendly, wit
 ### 📦 Installation
 Clone the repository:
 ```bash
- git clone https://github.com/MdWasifAli07/Aust-Hivenet.git
- cd Aust-Hivenet
-
+git clone https://github.com/MdWasifAli07/Aust-Hivenet.git
+cd Aust-Hivenet
+ ```
 ## Backend
-
+```
 cd backend
 npm install
 npm run dev
-
+```
 ## Frontend
+```
 cd ../frontend
 npm install
 npm run dev
+```
 
-Visit: http://localhost:5173/
+## Visit: http://localhost:5173/
 
 ## Project Structure
-
+```
 aust-hivenet/
 ├── frontend/            # React + Tailwind frontend
 ├── backend/             # Express backend
@@ -119,7 +121,7 @@ aust-hivenet/
 │   ├── models/
 │   └── ...
 └── README.md            # Project documentation
-
+```
 ## 👥 Team
 
 | Name                 | ID           | GitHub / Portfolio |
