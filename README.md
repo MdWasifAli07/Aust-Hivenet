@@ -3,8 +3,9 @@
 A web-based platform designed to connect all clubs of AUST with their members and interested students. Clubs can share updates about events, and students will receive notifications based on their interests.
 
 ---
-## Wakatime ( Wasif Ali)
-[![wakatime](https://wakatime.com/badge/user/25bd1379-89ac-47c1-8743-d56b2288f599/project/d16bb048-5a8e-4ed8-ae1b-c8657e93487b.svg)](https://wakatime.com/badge/user/25bd1379-89ac-47c1-8743-d56b2288f599/project/d16bb048-5a8e-4ed8-ae1b-c8657e93487b)
+## Wakatime (Wasif Ali)
+[![wakatime](https://wakatime.com/badge/user/25bd1379-89ac-47c1-8743-d56b2288f599/project/d16bb048-5a8e-4ed8-ae1b-c8657e93487b.svg)](https://wakatime.com/@25bd1379-89ac-47c1-8743-d56b2288f599/projects/hrknrszgdy)
+
 ## 📖 Table of Contents
 - [About the Project](#-about-the-project)
 - [Key Features](#-key-features)
