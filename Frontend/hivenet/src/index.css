@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -25,9 +25,12 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  flex-direction: column;
+  align-items: center;
   min-width: 320px;
   min-height: 100vh;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -54,6 +57,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* Light Mode */
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -64,5 +68,28 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+/* ========= Responsive Media Queries ========= */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.4em;
+  }
+
+  button {
+    font-size: 0.95em;
+    padding: 0.5em 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8em;
+  }
+
+  button {
+    font-size: 0.9em;
+    padding: 0.4em 0.9em;
   }
 }

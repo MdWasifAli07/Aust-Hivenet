@@ -1,0 +1,9 @@
+.lang-switch{
+  display:flex; align-items:center; gap:8px; padding:6px 10px; border:1px solid #e5e7eb;
+  border-radius:999px; background:#fff;
+}
+.lang-switch button{
+  border:none; background:#f3f4f6; padding:6px 10px; border-radius:999px; cursor:pointer; font-weight:600;
+}
+.lang-switch button.active{ background:#0f1e46; color:#fff; }
+/* (reserved for future toggles – no change needed) */

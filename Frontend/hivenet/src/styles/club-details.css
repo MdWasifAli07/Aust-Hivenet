@@ -1,0 +1,87 @@
+/* ==== Student > Club Details ==== */
+.clubd{ padding:16px 0 20px; }
+
+/* Header */
+.clubd__hero{
+  display:grid; grid-template-columns:auto 1fr auto; gap:12px; align-items:center;
+}
+.clubd__logo{
+  width:54px; height:54px; border-radius:14px; display:grid; place-items:center;
+  background:#ecfdf5; border:1px solid #bbf7d0; color:#065f46; font-weight:900; font-size:18px;
+}
+.clubd__title{ margin:0 0 4px; font-size:24px; font-weight:900; color:var(--ink); }
+.clubd__tag{ margin:0; }
+.clubd__line{ margin:6px 0 0; }
+.clubd__cta{ display:flex; gap:8px; flex-wrap:wrap; }
+
+/* Tabs */
+.clubd__tabs{
+  display:flex; gap:6px; border:1px solid var(--border); border-radius:999px; padding:4px;
+  background:var(--surface); margin:12px 0;
+}
+.clubd__tabs button{
+  border:none; background:transparent; padding:6px 12px; border-radius:999px; cursor:pointer; color:var(--ink); font-weight:700;
+}
+.clubd__tabs button.on{
+  background:#ecfdf5; color:#065f46; outline:1px solid #bbf7d0;
+}
+
+/* Panel */
+
+/* Overview */
+.grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:12px; }
+.card{
+  border:1px solid var(--border); background:var(--surface); border-radius:12px; padding:12px; box-shadow:var(--shadow-sm); color:var(--ink);
+}
+.card__title{ margin:0 0 6px; font-weight:900; color:var(--ink); }
+.meta{ list-style:none; margin:0; padding:0; display:grid; gap:6px; }
+.links{ display:flex; gap:8px; flex-wrap:wrap; }
+
+/* Members */
+.members{ display:grid; gap:10px; }
+.mem{
+  display:grid; grid-template-columns:auto 1fr auto; gap:10px; align-items:center;
+  border:1px solid var(--border); background:var(--surface); border-radius:12px; padding:10px; box-shadow:var(--shadow-sm);
+}
+.avatar{
+  width:38px; height:38px; border-radius:10px; display:grid; place-items:center;
+  background:#ecfdf5; border:1px solid #bbf7d0; color:#065f46; font-weight:900;
+}
+.grow{ flex:1; }
+.m1{ font-weight:800; color:var(--ink); }
+.m2{ font-size:12px; }
+
+/* Chat (demo UI) */
+.chat{ display:grid; gap:10px; }
+.chat__list{ display:grid; gap:8px; max-height:320px; overflow:auto; padding-right:4px; }
+.bubble{
+  border:1px solid var(--border); background:#f9fafb; border-radius:12px; padding:8px 10px;
+}
+.bubble.me{ background:#ecfdf5; border-color:#bbf7d0; }
+.b1{ font-size:12px; }
+.b2{ margin-top:4px; color:var(--ink); }
+.chat__box{ display:flex; gap:8px; }
+
+/* Events list */
+.evts{ display:grid; gap:10px; }
+.evt{
+  display:grid; grid-template-columns:auto 1fr auto; gap:10px; align-items:center;
+  border:1px solid var(--border); background:var(--surface); border-radius:12px; padding:10px; box-shadow:var(--shadow-sm);
+}
+.evt-date{
+  width:46px; height:46px; border-radius:12px; display:grid; place-items:center;
+  background:#ecfdf5; border:1px solid #bbf7d0; color:#065f46; font-weight:900; line-height:1; text-align:center;
+}
+.evt-date .d1{ font-size:16px; }
+.evt-date .d2{ font-size:12px; }
+.t1{ font-weight:800; color:var(--ink); }
+.t2{ font-size:12.5px; }
+
+/* Responsive */
+@media (max-width:880px){
+  .clubd__hero{ grid-template-columns:auto 1fr; }
+  .clubd__cta{ grid-column:1 / -1; }
+}
+@media (max-width:640px){
+  .mem, .evt{ grid-template-columns:auto 1fr; }
+}

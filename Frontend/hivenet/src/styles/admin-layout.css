@@ -1,0 +1,89 @@
+.layout.admin{
+  display:grid; grid-template-columns:260px 1fr;
+  gap:16px; padding:16px; min-height:calc(100vh - 120px);
+  background:
+    radial-gradient(32% 36% at 86% 12%, #ecfdf5 0%, rgba(236,253,245,0) 70%),
+    linear-gradient(180deg, #f8fafc 0%, #f7fafc 100%);
+}
+.admin-sider{ border-right:1px solid var(--border); padding-right:12px; }
+.admin-brand{ display:flex; align-items:center; gap:8px; margin-bottom:12px; }
+.admin-brand .logo{
+  width:36px; height:36px; border-radius:12px; display:grid; place-items:center; color:#fff;
+  background:#111827; box-shadow:0 10px 20px rgba(17,24,39,.22);
+}
+.admin-brand .btext .t1{ font-weight:800; }
+.admin-brand .btext .t2{ color:var(--muted); font-size:12px; }
+.admin-nav{ display:grid; gap:6px; }
+.admin-nav a{ padding:8px 10px; border-radius:10px; transition:background .12s ease, transform .12s ease, color .12s ease; }
+.admin-nav a:hover{ background:var(--primary-50); transform:translateY(-1px); }
+.admin-nav a.active{ background:linear-gradient(180deg, var(--primary-700), #0b4533); color:#fff; font-weight:800; box-shadow:var(--shadow-sm); }
+.content{ padding-right:8px; }
+
+/* Mobile collapse */
+@media (max-width:900px){
+  .layout.admin{ grid-template-columns:1fr; gap:12px; padding:12px; }
+  .admin-sider{ border-right:0; padding-right:0; border-bottom:1px solid var(--border); padding-bottom:8px; position:sticky; top:56px; background:var(--surface); z-index:10; }
+  .admin-nav{ display:flex; gap:8px; overflow:auto; padding-bottom:6px; }
+  .admin-nav a{ white-space:nowrap; }
+  .content{ padding-right:0; }
+}
+@media (max-width:640px){
+  .admin-sider{ top:52px; }
+}
+.admin-logout {
+  margin-top: auto; /* sidebar এর নিচে বাটন রাখবে */
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.admin-logout .btn-ghost {
+  width: 100%;
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px 0;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+
+.admin-logout .btn-ghost:hover {
+  background: #fff;
+  color: #000;
+}
+/* Admin Sidebar styles */
+
+/* Home link styles */
+.home-link {
+  font-weight: 500;
+  padding: 10px 15px;
+  display: block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #000;
+}
+
+.home-link:hover {
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+/* Logout button styles */
+.logout-btn {
+  font-weight: 500;
+  padding: 10px 15px;
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+  background-color: #ff4e4e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: #ff0000;
+}
