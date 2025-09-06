@@ -1,0 +1,4 @@
+.public-main{ padding: 28px 0 56px; background:#fff; }
+.public-footer{
+  border-top:1px solid #e5e7eb; padding:18px 0; color:var(--muted); background:#fff;
+}

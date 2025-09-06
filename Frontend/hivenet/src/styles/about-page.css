@@ -1,0 +1,55 @@
+/* ==== About page ==== */
+
+.about-page{ padding:16px 0 24px; }
+
+/* Hero */
+.about-hero{
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:12px; padding:16px; box-shadow:var(--shadow-sm); color:var(--ink);
+  margin-bottom:14px;
+}
+.about-title{ margin:0 0 6px; font-size:28px; font-weight:800; color:var(--ink); }
+.about-lead{ margin:0; color:var(--muted); line-height:1.7; }
+
+/* Feature grid */
+.about-grid{
+  display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap:14px; margin-top:12px;
+}
+.about-card{
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:12px; padding:14px; box-shadow:var(--shadow-sm); color:var(--ink);
+}
+.about-card .icon{
+  width:36px; height:36px; border-radius:10px; display:grid; place-items:center;
+  background:#ecfdf5; border:1px solid #bbf7d0; color:#065f46; font-weight:900; margin-bottom:8px;
+}
+.about-card .title{ font-weight:800; color:var(--ink); margin-bottom:4px; }
+.about-card .desc{ color:var(--muted); }
+
+/* Roadmap / timeline */
+.timeline{
+  margin-top:14px; background:var(--surface); border:1px solid var(--border);
+  border-radius:12px; padding:14px; box-shadow:var(--shadow-sm);
+}
+.timeline .row{ display:flex; gap:10px; align-items:flex-start; padding:8px 0; }
+.timeline .dot{ width:10px; height:10px; border-radius:50%; background:#10b981; margin-top:6px; }
+.timeline .txt{ color:var(--ink); }
+.timeline .meta{ color:var(--muted); font-size:12px; }
+
+/* Team/Acknowledgements */
+.about-list{
+  display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap:12px; margin-top:12px;
+}
+.about-person{
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:12px; padding:12px; box-shadow:var(--shadow-sm);
+}
+.about-person .name{ font-weight:800; color:var(--ink); }
+.about-person .role{ color:var(--muted); font-size:12px; }
+
+/* Responsive */
+@media (max-width:640px){
+  .about-title{ font-size:24px; }
+}

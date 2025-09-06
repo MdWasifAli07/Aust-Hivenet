@@ -1,0 +1,57 @@
+.layout{
+  display:grid; grid-template-columns:260px 1fr;
+  gap:16px; padding:16px; min-height:calc(100vh - 120px);
+  background:
+    radial-gradient(36% 40% at 12% 12%, #ecfdf5 0%, rgba(236,253,245,0) 60%),
+    linear-gradient(180deg, #f8fafc 0%, #f7fafc 100%);
+}
+.sider{ border-right:1px solid var(--border); padding-right:12px; }
+.sider__brand{ display:flex; align-items:center; gap:8px; margin-bottom:12px; }
+.sider .logo{
+  width:36px; height:36px; border-radius:12px; display:grid; place-items:center; color:#fff;
+  background:linear-gradient(180deg, var(--primary-600), var(--primary-700));
+  box-shadow:0 10px 22px rgba(6,95,70,.24);
+}
+.sider .btext .t1{ font-weight:800; }
+.sider .btext .t2{ color:var(--muted); font-size:12px; }
+.sider__nav{ display:grid; gap:6px; }
+.sider__nav a{ padding:8px 10px; border-radius:10px; transition:background .12s ease, transform .12s ease; }
+.sider__nav a:hover{ background:var(--primary-50); transform:translateY(-1px); }
+.sider__nav a.active{ background:#ffffff; color:var(--primary-700); font-weight:800; outline:1px solid #e5e7eb; box-shadow:var(--shadow-sm); }
+.content{ padding-right:8px; }
+
+/* Mobile: sidebar becomes top scrollable tabs */
+@media (max-width:900px){
+  .layout{ grid-template-columns:1fr; gap:12px; padding:12px; }
+  .sider{ border-right:0; padding-right:0; border-bottom:1px solid var(--border); padding-bottom:8px; position:sticky; top:56px; background:var(--surface); z-index:10; }
+  .sider__brand{ margin-bottom:8px; }
+  .sider__nav{ display:flex; gap:8px; overflow:auto; padding-bottom:6px; }
+  .sider__nav a{ white-space:nowrap; }
+  .content{ padding-right:0; }
+}
+@media (max-width:640px){
+  .sider{ top:52px; }
+}
+/* Home button styles */
+.home-action {
+  position: fixed; /* Fixed position at the top */
+  top: 20px; /* Keep it 20px from the top */
+  left: 20px; /* Keep it 20px from the left */
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.home-link {
+  padding: 10px 20px;
+  background-color: transparent; /* No background color */
+  color: #000; /* Black text */
+  border: 2px solid #000; /* Border for the button */
+  border-radius: 5px;
+  font-weight: 600;
+  text-decoration: none; /* Remove underline */
+}
+
+.home-link:hover {
+  background-color: transparent; /* Keep transparent on hover */
+  color: #555; /* Slightly lighter text on hover */
+  border-color: #555; /* Slightly lighter border on hover */
+}
