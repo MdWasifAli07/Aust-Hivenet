@@ -4,7 +4,7 @@ A web-based platform designed to connect all clubs of AUST with their members an
 
 ---
 ## Wakatime (Wasif Ali)
- [![wakatime](https://wakatime.com/badge/user/25bd1379-89ac-47c1-8743-d56b2288f599/project/d16bb048-5a8e-4ed8-ae1b-c8657e93487b.svg)](https://wakatime.com/@25bd1379-89ac-47c1-8743-d56b2288f599/projects/hrknrszgdy)
+ [![wakatime](https://wakatime.com/badge/user/25bd1379-89ac-47c1-8743-d56b2288f599/project/ea30f442-b533-47b2-93b1-ead5656b33e5.svg)](https://wakatime.com/badge/user/25bd1379-89ac-47c1-8743-d56b2288f599/project/ea30f442-b533-47b2-93b1-ead5656b33e5)
 ## Wakatime (Md Hasibuzzaman Khan Rafi )
  [![wakatime](https://wakatime.com/badge/user/f5296c65-f0bc-4c44-9688-6b89e820da8b/project/71a91981-de96-4473-9b5a-5a4d9a792acd.svg)](https://wakatime.com/badge/user/f5296c65-f0bc-4c44-9688-6b89e820da8b/project/71a91981-de96-4473-9b5a-5a4d9a792acd)
 
