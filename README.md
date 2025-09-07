@@ -4,8 +4,7 @@ A web-based platform designed to connect all clubs of AUST with their members an
 
 ---
 
-##Wakatime (Ma-Huan Sheikh Meem)
-
+## Wakatime (Ma-Huan Sheikh Meem)
 [![wakatime](https://wakatime.com/badge/user/119f505c-cbde-4768-9400-0f9daac44200/project/4cc15319-388a-465c-9f1d-2113f8200be7.svg)](https://wakatime.com/badge/user/119f505c-cbde-4768-9400-0f9daac44200/project/4cc15319-388a-465c-9f1d-2113f8200be7)
 ## Wakatime (Wasif Ali)
  [![wakatime](https://wakatime.com/badge/user/25bd1379-89ac-47c1-8743-d56b2288f599/project/ea30f442-b533-47b2-93b1-ead5656b33e5.svg)](https://wakatime.com/badge/user/25bd1379-89ac-47c1-8743-d56b2288f599/project/ea30f442-b533-47b2-93b1-ead5656b33e5)
