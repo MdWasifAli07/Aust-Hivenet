@@ -3,6 +3,11 @@
 A web-based platform designed to connect all clubs of AUST with their members and interested students. Clubs can share updates about events, and students will receive notifications based on their interests.
 
 ---
+## Wakatime (Wasif Ali)
+ [![wakatime](https://wakatime.com/badge/user/25bd1379-89ac-47c1-8743-d56b2288f599/project/d16bb048-5a8e-4ed8-ae1b-c8657e93487b.svg)](https://wakatime.com/@25bd1379-89ac-47c1-8743-d56b2288f599/projects/hrknrszgdy)
+## Wakatime (Md Hasibuzzaman Khan Rafi )
+ [![wakatime](https://wakatime.com/badge/user/f5296c65-f0bc-4c44-9688-6b89e820da8b/project/71a91981-de96-4473-9b5a-5a4d9a792acd.svg)](https://wakatime.com/badge/user/f5296c65-f0bc-4c44-9688-6b89e820da8b/project/71a91981-de96-4473-9b5a-5a4d9a792acd)
+
 
 ## 📖 Table of Contents
 - [About the Project](#-about-the-project)
@@ -37,9 +42,9 @@ It aims to bring all AUST clubs under one digital platform where:
 - Browse all clubs and their upcoming events  
 - Follow clubs and set interest preferences  
 - Get event notifications and reminders  
-- Register for events directly from the platform 
-- Ai integrated chatbot 
-- Chatting system with clubs for asking different questions 
+- Register for events directly from the platform
+- Ai integrated chatbot
+- Chatting system with clubs for asking different questions
 
 ### ✅ Club/Admin-Side
 - Post events and announcements  
@@ -88,7 +93,7 @@ Modern, clean, and responsive UI designed to be mobile and desktop friendly, wit
 
 ### 🔧 Prerequisites
 - Node.js >= 18  
-- Mysql 
+- Mysql
 
 ### 📦 Installation
 Clone the repository:
