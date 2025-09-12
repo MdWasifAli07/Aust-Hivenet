@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Inertia\Response;
+use App\Enums\RoleEnum; // Add this import
 
 class AuthenticatedSessionController extends Controller
 {
@@ -30,10 +31,19 @@ class AuthenticatedSessionController extends Controller
     public function store(LoginRequest $request): RedirectResponse
     {
         $request->authenticate();
-
         $request->session()->regenerate();
 
-        return redirect()->intended(route('dashboard', absolute: false));
+        $user = $request->user();
+        
+        // Redirect based on user role
+        // Redirect based on user role
+         // Redirect based on user role
+if ($user->hasRole(RoleEnum::ADMIN->value) || $user->hasRole(RoleEnum::CLUB_ADMIN->value)) {
+    return redirect()->route('filament.admin.pages.dashboard'); // Use Filament route
+}
+
+// Default redirect for regular users
+return redirect()->route('dashboard'); // Use named route
     }
 
     /**
@@ -42,11 +52,8 @@ class AuthenticatedSessionController extends Controller
     public function destroy(Request $request): RedirectResponse
     {
         Auth::guard('web')->logout();
-
         $request->session()->invalidate();
-
         $request->session()->regenerateToken();
-
         return redirect('/');
     }
 }
