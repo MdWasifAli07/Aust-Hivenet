@@ -12,6 +12,11 @@ class UserSeeder extends Seeder
 {
     public function run(): void
     {
+        // Ensure roles exist
+        foreach ([RoleEnum::ADMIN->value, RoleEnum::CLUB_ADMIN->value, RoleEnum::USER->value] as $role) {
+            Role::firstOrCreate(['name' => $role, 'guard_name' => 'web']);
+        }
+
         // Create Admin User
         $admin = User::firstOrCreate(
             ['email' => 'admin@example.com'],
@@ -25,17 +30,8 @@ class UserSeeder extends Seeder
 
         // Create Club Admin Users
         $clubAdmins = [
-            [
-                'name' => 'Cse admin',
-                'email' => 'cse@example.com',
-                'password' => Hash::make('password'),
-            ],
-            [
-                'name' => 'EEE admin',
-                'email' => 'eee@example.com',
-                'password' => Hash::make('password'),
-            ],
-            
+            ['name' => 'CSE admin', 'email' => 'cse@example.com'],
+            ['name' => 'EEE admin', 'email' => 'eee@example.com'],
         ];
 
         foreach ($clubAdmins as $clubAdminData) {
@@ -43,7 +39,7 @@ class UserSeeder extends Seeder
                 ['email' => $clubAdminData['email']],
                 [
                     'name' => $clubAdminData['name'],
-                    'password' => $clubAdminData['password'],
+                    'password' => Hash::make('password'),
                     'email_verified_at' => now(),
                 ]
             );
@@ -52,17 +48,8 @@ class UserSeeder extends Seeder
 
         // Create Regular Users
         $users = [
-            [
-                'name' => 'John Doe',
-                'email' => 'john@example.com',
-                'password' => Hash::make('password'),
-            ],
-            [
-                'name' => 'Jane Smith',
-                'email' => 'jane@example.com',
-                'password' => Hash::make('password'),
-            ],
-           
+            ['name' => 'John Doe', 'email' => 'john@example.com'],
+            ['name' => 'Jane Smith', 'email' => 'jane@example.com'],
         ];
 
         foreach ($users as $userData) {
@@ -70,14 +57,14 @@ class UserSeeder extends Seeder
                 ['email' => $userData['email']],
                 [
                     'name' => $userData['name'],
-                    'password' => $userData['password'],
+                    'password' => Hash::make('password'),
                     'email_verified_at' => now(),
                 ]
             );
             $user->assignRole(RoleEnum::USER->value);
         }
 
-        // Create additional users with Faker if needed
+        // Create additional users with Faker if in local
         if (app()->environment('local')) {
             User::factory(20)->create()->each(function ($user) {
                 $roles = [RoleEnum::USER->value, RoleEnum::CLUB_ADMIN->value];
@@ -85,9 +72,10 @@ class UserSeeder extends Seeder
             });
         }
 
-        $this->command->info('Users created successfully!');
-        $this->command->info('Admin credentials: admin@example.com / password');
-        $this->command->info('Club admin credentials: sports@example.com / password');
-        $this->command->info('User credentials: john@example.com / password');
+        // Console output
+        $this->command->info('✅ Users created successfully!');
+        $this->command->info('🔑 Admin: admin@example.com / password');
+        $this->command->info('🔑 Club Admins: cse@example.com, eee@example.com / password');
+        $this->command->info('🔑 Users: john@example.com, jane@example.com / password');
     }
 }
