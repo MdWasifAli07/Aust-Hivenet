@@ -1,26 +1,4 @@
-// // resources/js/app.js
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import Chat from './Chat'; // আপনার চ্যাট কম্পোনেন্ট
 
-// ReactDOM.render(
-//     <Chat />,
-//     document.getElementById('chat')  // Blade টেমপ্লেটের div#chat
-// );
-
-
-// import React from 'react';
-// import ReactDOM from 'react-dom/client';
-// import { App } from '@inertiajs/react';  // Inertia App কম্পোনেন্ট
-
-// const root = ReactDOM.createRoot(document.getElementById('chat'));  // Blade টেমপ্লেটের div#chat
-
-// root.render(
-//   <App
-//     initialPage={JSON.parse(document.getElementById('chat').dataset.page)}  // Laravel থেকে পেজ ডেটা পাব
-//     resolveComponent={(name) => import(`./Pages/${name}`).then((module) => module.default)} // কম্পোনেন্ট রেজলভ করা
-//   />
-// );
 
 import React, { useEffect } from 'react';
 import Echo from 'laravel-echo';
