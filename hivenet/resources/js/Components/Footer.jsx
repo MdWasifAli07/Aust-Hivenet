@@ -33,7 +33,7 @@ export default function Footer() {
             {/* Newsletter Subscription */}
             <div>
               <h2 className="text-xl font-medium mb-4">Stay Updated</h2>
-              <p className="text-gray-400 mb-4">Subscribe to receive the latest news and updates from HiveNet.</p>
+              <p className="text-gray-400 text-sm mb-4">Subscribe to receive the latest news and updates from HiveNet.</p>
               <form onSubmit={handleSubscribe} className="flex items-center">
                 <input
                   type="email"
