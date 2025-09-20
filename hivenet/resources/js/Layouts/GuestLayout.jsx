@@ -1,18 +1,22 @@
-import ApplicationLogo from '@/Components/ApplicationLogo';
-import { Link } from '@inertiajs/react';
+import React from 'react';
+import Navbar from '@/Components/floating-navbar-demo'; // Import the Navbar component
+import BackgroundFX from '@/Components/BackgroundFX'; // Import BackgroundFX
 
 export default function GuestLayout({ children }) {
-    return (
-        <div className="flex min-h-screen flex-col items-center bg-gray-100 pt-6 sm:justify-center sm:pt-0">
-            <div>
-                <Link href="/">
-                    <ApplicationLogo className="h-20 w-20 fill-current text-gray-500" />
-                </Link>
-            </div>
+  return (
+    <div className="relative min-h-screen flex flex-col items-center">
+      {/* BackgroundFX Component: Now placed outside content and fills the whole screen */}
+      <BackgroundFX /> 
 
-            <div className="mt-6 w-full overflow-hidden bg-white px-6 py-4 shadow-md sm:max-w-md sm:rounded-lg">
-                {children}
-            </div>
-        </div>
-    );
+      {/* Navbar */}
+      <div className="relative z-30 w-full">
+        <Navbar /> {/* Add the Navbar component here */}
+      </div>
+
+      {/* Main Content Area */}
+      <div className="relative top-20 mt-6 w-full px-6 py-4 sm:max-w-xl sm:rounded-lg">
+        {children} {/* The children (form, etc.) will go here */}
+      </div>
+    </div>
+  );
 }
