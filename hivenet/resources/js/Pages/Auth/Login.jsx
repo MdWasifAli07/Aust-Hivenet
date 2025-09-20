@@ -175,7 +175,7 @@ export default function Login({ status, canResetPassword }) {
               </Link>
             </p>
           </div> <br></br>
-        </section><br></br><br></br><br></br>
+        </section>
       </GuestLayout>
 
       {/* animations */}
