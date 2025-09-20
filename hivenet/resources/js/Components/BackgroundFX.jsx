@@ -18,7 +18,7 @@ function BackgroundFX() {
       </div>
 
       {/* Subtle grid overlay */}
-      <div className="pointer-events-none absolute inset-0 opacity-[0.1] mix-blend-screen [background-image:linear-gradient(to_right,rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.12)_1px,transparent_1px)] [background-size:36px_36px]" />
+      <div className="pointer-events-none absolute inset-0 opacity-[0.2] mix-blend-screen [background-image:linear-gradient(to_right,rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.12)_1px,transparent_1px)] [background-size:36px_36px]" />
 
       {/* Animated vignette */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_60%_at_50%_20%,transparent,rgba(0,0,0,0.65))]" />

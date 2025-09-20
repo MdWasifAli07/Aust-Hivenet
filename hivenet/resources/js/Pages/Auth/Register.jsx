@@ -284,20 +284,10 @@ export default function Register() {
                                 Sign In
                             </Link>
                         </p>
-                        <p className="mt-8 text-center text-sm text-white/70">
-                                      Already have an account?{" "}
-                                      <Link
-                                        href={route("login")}
-                                        className="font-semibold text-[#7d9dd2] hover:text-[#3fc3b1] transition-colors"
-                                      >
-                                        ign in
-                                      </Link>
-                                    </p>
                     </div>
                 </form>
             </GuestLayout> 
         </main>
-        
     );
 }
 
