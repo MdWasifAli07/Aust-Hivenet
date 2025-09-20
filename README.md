@@ -4,6 +4,16 @@ A web-based platform designed to connect all clubs of AUST with their members an
 
 ---
 
+## Wakatime (Ma-Huan Sheikh Meem)
+[![wakatime](https://wakatime.com/badge/user/119f505c-cbde-4768-9400-0f9daac44200/project/4cc15319-388a-465c-9f1d-2113f8200be7.svg)](https://wakatime.com/badge/user/119f505c-cbde-4768-9400-0f9daac44200/project/4cc15319-388a-465c-9f1d-2113f8200be7)
+## Wakatime (Wasif Ali)
+ [![wakatime](https://wakatime.com/badge/user/25bd1379-89ac-47c1-8743-d56b2288f599/project/ea30f442-b533-47b2-93b1-ead5656b33e5.svg)](https://wakatime.com/badge/user/25bd1379-89ac-47c1-8743-d56b2288f599/project/ea30f442-b533-47b2-93b1-ead5656b33e5)
+## Wakatime (Md Hasibuzzaman Khan Rafi )
+ [![wakatime](https://wakatime.com/badge/user/f5296c65-f0bc-4c44-9688-6b89e820da8b/project/71a91981-de96-4473-9b5a-5a4d9a792acd.svg)](https://wakatime.com/badge/user/f5296c65-f0bc-4c44-9688-6b89e820da8b/project/71a91981-de96-4473-9b5a-5a4d9a792acd)
+ ## Wakatime (Hridoy Saha)
+[![wakatime](https://wakatime.com/badge/user/c0eb3a4c-6b10-43ca-9489-537dacbac401/project/a4afd59a-463e-4bfd-9e1e-bf53cc56a622.svg)](https://wakatime.com/badge/user/c0eb3a4c-6b10-43ca-9489-537dacbac401/project/a4afd59a-463e-4bfd-9e1e-bf53cc56a622)
+
+
 ## 📖 Table of Contents
 - [About the Project](#-about-the-project)
 - [Key Features](#-key-features)
@@ -37,9 +47,9 @@ It aims to bring all AUST clubs under one digital platform where:
 - Browse all clubs and their upcoming events  
 - Follow clubs and set interest preferences  
 - Get event notifications and reminders  
-- Register for events directly from the platform 
-- Ai integrated chatbot 
-- Chatting system with clubs for asking different questions 
+- Register for events directly from the platform
+- Ai integrated chatbot
+- Chatting system with clubs for asking different questions
 
 ### ✅ Club/Admin-Side
 - Post events and announcements  
@@ -88,7 +98,7 @@ Modern, clean, and responsive UI designed to be mobile and desktop friendly, wit
 
 ### 🔧 Prerequisites
 - Node.js >= 18  
-- Mysql 
+- Mysql
 
 ### 📦 Installation
 Clone the repository:
