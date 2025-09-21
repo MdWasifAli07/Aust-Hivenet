@@ -1,15 +1,21 @@
 import React from "react";
-import { IconHome, IconCalendar, IconSearch, IconInfoCircle } from "@tabler/icons-react";
+import { IconHome, IconCalendar, IconSearch, IconInfoCircle, IconUser, IconLogout } from "@tabler/icons-react";
 import NavLink from "./NavLink";  // Import the NavLink component
+import { Link, usePage } from "@inertiajs/react"; // ⬅️ added
 
 export default function FloatingNavDemo() {
   // Define the nav items, including the Logo
   const navItems = [
     { name: "Home", link: "/", icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" /> },
     { name: "Events", link: "/events", icon: <IconCalendar className="h-4 w-4 text-neutral-500 dark:text-white" /> },
-    { name: "Explore", link: "/explore", icon: <IconSearch className="h-4 w-4 text-neutral-500 dark:text-white" /> },
-    { name: "About Us", link: "/about-us", icon: <IconInfoCircle className="h-4 w-4 text-neutral-500 dark:text-white" /> },
+    { name: "About Us", link: "/aboutus", icon: <IconInfoCircle className="h-4 w-4 text-neutral-500 dark:text-white" /> },
   ];
+
+  const { props } = usePage();
+  const user = props?.auth?.user || null;
+  const r = (name, fallback) => {
+    try { return typeof route === "function" ? route(name) : fallback; } catch { return fallback; }
+  };
 
   return (
     <div className="relative w-full">
@@ -34,17 +40,43 @@ export default function FloatingNavDemo() {
           ))}
         </div>
 
-        {/* Sign In and Sign Up Buttons */}
+        {/* Auth-aware Buttons */}
         <div className="flex space-x-4">
-          {/* Sign In Button - Redirect to /login */}
-          <a href="/login" className="shadow-[inset_0_0_0_2px_#616467] text-white text-sm px-6 py-2 rounded-full font-bold bg-transparent hover:bg-[#616467] hover:text-white dark:text-neutral-200 transition duration-200">
-            Sign In
-          </a>
+          {user ? (
+            <>
+              {/* Profile */}
+              <Link
+                href={r("profile.edit", "/profile")}
+                className="shadow-[inset_0_0_0_2px_#616467] text-white text-sm px-4 py-2 rounded-full font-bold bg-transparent hover:bg-[#616467] hover:text-white dark:text-neutral-200 transition duration-200 flex items-center gap-2"
+              >
+                <IconUser className="h-4 w-4" />
+                <span className="hidden sm:inline">Profile</span>
+              </Link>
 
-          {/* Sign Up Button - Redirect to /register */}
-          <a href="/register" className="shadow-[inset_0_0_0_2px_#616467] text-white text-sm px-6 py-2 rounded-full font-bold bg-gradient-to-r from-blue-600 to-indigo-700 hover:bg-gradient-to-l hover:from-indigo-800 hover:to-blue-300 dark:text-neutral-200 transition duration-200">
-            Sign Up
-          </a>
+              {/* Logout (POST) */}
+              <Link
+                href={r("logout", "/logout")}
+                method="post"
+                as="button"
+                className="shadow-[inset_0_0_0_2px_#616467] text-white text-sm px-6 py-2 rounded-full font-bold bg-gradient-to-r from-red-600 to-pink-600 hover:bg-gradient-to-l hover:from-pink-700 hover:to-red-500 dark:text-neutral-200 transition duration-200 flex items-center gap-2"
+              >
+                <IconLogout className="h-4 w-4" />
+                Log out
+              </Link>
+            </>
+          ) : (
+            <>
+              {/* Sign In Button - Redirect to /login */}
+              <a href="/login" className="shadow-[inset_0_0_0_2px_#616467] text-white text-sm px-6 py-2 rounded-full font-bold bg-transparent hover:bg-[#616467] hover:text-white dark:text-neutral-200 transition duration-200">
+                Sign In
+              </a>
+
+              {/* Sign Up Button - Redirect to /register */}
+              <a href="/register" className="shadow-[inset_0_0_0_2px_#616467] text-white text-sm px-6 py-2 rounded-full font-bold bg-gradient-to-r from-blue-600 to-indigo-700 hover:bg-gradient-to-l hover:from-indigo-800 hover:to-blue-300 dark:text-neutral-200 transition duration-200">
+                Sign Up
+              </a>
+            </>
+          )}
         </div>
       </div>
     </div>
