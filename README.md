@@ -1,176 +1,166 @@
 # AUST HiveNet: A Unified Club & Event Management Platform
-**Course:** CSE 3100  
 
-A web-based platform designed to connect all clubs of AUST with their members and interested students. Clubs can share updates about events, and students will receive notifications based on their interests. Students can join events directly through the platform, while admins and super admins have access to their respective dashboards for managing users, events, and notifications
+**Team Members:**
+- Md. Wasif Ali | wasif.cse.20220204054@aust.edu
+- Hasibuzzaman Khan Rafi | hasibuzzaman.cse.20220204055@aust.edu
+- Hridoy Pranto | hridoy.cse.20220204059@aust.edu
+- Ma-Huan Sheikh Meem | mahuan.cse.20220204070@aust.edu
 
----
-## Wakatime (Wasif Ali)
- [![wakatime](https://wakatime.com/badge/github/MdWasifAli99/Aust-HiveNet.svg)](https://wakatime.com/badge/github/MdWasifAli99/Aust-HiveNet)
-## Wakatime (Md Hasibuzzaman Khan Rafi )
- [![wakatime](https://wakatime.com/badge/user/f5296c65-f0bc-4c44-9688-6b89e820da8b/project/71a91981-de96-4473-9b5a-5a4d9a792acd.svg)](https://wakatime.com/badge/user/f5296c65-f0bc-4c44-9688-6b89e820da8b/project/71a91981-de96-4473-9b5a-5a4d9a792acd)
- ## Wakatime (Hridoy Saha)
-[![wakatime](https://wakatime.com/badge/user/c0eb3a4c-6b10-43ca-9489-537dacbac401/project/a4afd59a-463e-4bfd-9e1e-bf53cc56a622.svg)](https://wakatime.com/badge/user/c0eb3a4c-6b10-43ca-9489-537dacbac401/project/a4afd59a-463e-4bfd-9e1e-bf53cc56a622)
-## Wakatime (Ma-Huan Sheikh Meem)
-[![wakatime](https://wakatime.com/badge/user/119f505c-cbde-4768-9400-0f9daac44200/project/4cc15319-388a-465c-9f1d-2113f8200be7.svg)](https://wakatime.com/badge/user/119f505c-cbde-4768-9400-0f9daac44200/project/4cc15319-388a-465c-9f1d-2113f8200be7)
-
-## 📖 Table of Contents
-- [About the Project](#-about-the-project)
-- [Key Features](#-key-features)
-- [Target Audience](#-target-audience)
-- [UI Design](#-ui-design)
-- [Technology Stack](#-technology-stack)
-- [Getting Started](#-getting-started)
-  - [Prerequisites](#-prerequisites)
-  - [Installation](#-installation)
-  - [Running the Application](#-running-the-application)
-- [Project Structure](#-project-structure)
-- [Team](#-team)
+**Project Live Link:** [Not Deployed]  
+**Recorded video:** [Insert URL] (Optional)
 
 ---
 
-## 📌 About the Project
-**AUST HiveNet** is a full-stack platform developed as a course project for **CSE 3100**.  
-It aims to bring all AUST clubs under one digital platform where:
+## Table of Contents
 
-- Clubs can share their events and announcements
-- Students can follow clubs, express interest, receive notifications
-- Students can also join events directly from the platform
-- Admins and super admins have access to a dashboard for managing events, members, and notifications
-
-Our mission is to foster better communication between AUST clubs and students, increase engagement, and make event discovery and participation seamless. The platform makes it easy for students to join events, track club activities, and stay up-to-date on all relevant events happening at AUST.
+1. [Project Description](#1-project-description)
+2. [Workflow Overview](#2-workflow-overview)
+3. [Main Features](#3-main-features)
+4. [Technologies Used](#4-technologies-used)
+5. [System Architecture](#5-system-architecture)
+6. [Setup Guidelines](#6-setup-guidelines)
+    - [Backend](#backend)
+7. [Running the Application](#7-running-the-application)
+8. [Deployment Status & Tests](#8-deployment-status--tests)
+9. [Contribution Table](#9-contribution-table)
+10. [Screenshots](#10-screenshots)
+11. [Limitations / Known Issues](#11-limitations--known-issues)
 
 ---
 
-## 🚀 Key Features
+## 1. Project Description
 
-### ✅ Student-Side
-- Browse all clubs and their upcoming events  
-- Follow clubs and set interest preferences  
-- Get event notifications and reminders  
+**AUST HiveNet** is a full-stack platform developed as a course project for **CSE 3100**. The goal of the platform is to unify all AUST clubs and events under one digital platform where students can:
+- Browse and follow clubs, receive notifications, and join events.
+- Interact with clubs directly for event updates.
+- Admins can manage event posts, notifications, and club members.
+
+This platform enhances engagement, communication, and event participation for students, clubs, and administrators. 
+
+---
+
+## 2. Workflow Overview
+
+The system architecture is designed as a full-stack solution with separate workflows for both frontend and backend:
+- **Frontend (React.js)**: Students interact with the system, register for events, and receive notifications.
+- **Backend (Laravel)**: Clubs post events, manage members, and track participation.
+- **Admin Panel (Filament)**: Admins and super admins manage the platform, including content moderation and user roles.
+
+---
+
+## 3. Main Features
+
+### ✅ Student-Side:
+- Browse all clubs and upcoming events
+- Follow clubs and set interest preferences
+- Get event notifications and reminders
 - Register for events directly from the platform
-- Ai integrated chatbot
-- Chatting system with clubs for asking different questions
+- Chat with clubs (AI-integrated chatbot – failed to implement)
 
-### ✅ Club/Admin-Side
-- Post events and manage announcements to keep students informed.
-- Manage club members and track who’s interested in which events.
-- Send notifications to followers about upcoming events.
-- Track event engagement by monitoring the number of participants and interactions.
-- Super Admin can oversee all activities, manage multiple clubs, and approve posts/events.
----
-
-## 🎯 Target Audience
-- **Students:** Explore clubs, follow events, and register to join activities.
-- **Clubs:** Manage events, interact with students, and track participation.
-- **Admins:** Moderate content, manage clubs, and track overall event participation.
-- **Super Admin:** Oversee the entire platform, manage all clubs and admins, and moderate all content. 
+### ✅ Club/Admin-Side:
+- Post events and manage announcements
+- Manage club members and track participation
+- Send notifications to followers
+- Super Admin can moderate all content, events, and users
 
 ---
 
-## 🎨 UI Design
-Modern, clean, and responsive UI designed to be mobile and desktop friendly, with focus on easy event discovery and notifications.
+## 4. Technologies Used
 
-🔗 **Figma Link:** https://www.figma.com/design/qFwMwAFiZTdwok2NvfUMkN/AUST-HiveNet?node-id=43-1002&p=f
----
-
-## 🛠️ Technology Stack
-
-### **Frontend**
-- React.js  
-- Tailwind CSS ,ShadCN UI  
-
-### **Backend**
-- PHP Laravel for handling the backend logic and API
-- Laravel Breeze for simple authentication and session management
-
-### **Database**
-- MySQL for managing student, club, and event data
-
-### **Hosting / Cloud**
-- Vercel / Render / Netlify (TBD)
-
-### **DevOps & Tools**
-- GitHub  
-- Postman  
-- Figma  
+- **Frontend:** React.js, Tailwind CSS, ShadCN UI
+- **Backend:** Laravel, Laravel Breeze (authentication), Filament (admin panel), Filament Shield (roles and permissions)
+- **Database:** MySQL (hosted on Railway)
+- **DevOps & Tools:** Docker for containerization, GitHub Actions for CI/CD, Postman for API testing
 
 ---
 
-## ⚙️ Getting Started
+## 5. System Architecture
 
-### 🔧 Prerequisites
-- Node.js >= 18
-- MySQL
-- PHP >= 8.x
-- Composer for managing Laravel dependencies
+The system operates with a clear separation between frontend, backend, and database. Here is a breakdown:
+- **Frontend (React.js):** Communicates with the Laravel backend via RESTful APIs to handle events, notifications, and user interactions.
+- **Backend (Laravel):** Handles all business logic, user authentication, event posting, and notification management.
+- **Database (MySQL):** Stores student, club, event, and user data, hosted on Railway for scalability.
+- **Admin Panel (Filament):** Admins use Filament for managing users, roles, and events.
 
-### 📦 Installation
-1. Clone the repository:
+---
+
+## 6. Setup Guidelines  
+
+### Backend  
 ```bash
+# Clone the repository
 git clone https://github.com/MdWasifAli07/Aust-Hivenet.git
-cd Aust-Hivenet
- ```
-2. Backend Setup (Laravel Breeze):
-```
-- Navigate to the backend folder:
-cd hivenet
+cd Aust-Hivenet/hivenet
 
-- Install Composer dependencies:
+# Install Composer dependencies
 composer install
 
-- Set up the .env file for the database configuration:
+# Setup environment variables
 cp .env.example .env
+# Edit .env to configure database and other settings
 
-- Generate the application key:
+# Generate application key
 php artisan key:generate
 
-- Run migrations to set up the database tables:
+# Run migrations
 php artisan migrate
 
-- Install Laravel Breeze for authentication (if not already done):
+# Install Laravel Breeze (if not already installed)
 composer require laravel/breeze --dev
-php artisan breeze:install  
-npm install && npm run dev
-## Visit: http://localhost:5173/
+php artisan breeze:install
 
-- Start the backend server:
+# Install npm dependencies and build assets
+npm install
+npm run dev
+
+# Run backend server
 php artisan serve
 
-- Open your browser and go to:
-http://localhost:8000/
 ```
+## 7. Running the Application  
+- Start the backend server with `php artisan serve` (default: http://localhost:8000)  
+- Start the frontend development server with `npm run dev` (default: http://localhost:5173)  
+- Access the frontend URL in your browser to use the platform locally.  
 
+---  
 
+## 8. Deployment Status & Tests  
 
-## Project Structure
-```
-aust-hivenet/
-├── app/                 # Laravel app code (Controllers, Models, etc.)
-│   ├── Http/            # Controllers, Middleware, Requests
-│   ├── Models/          # Database models
-│   ├── config/          # Configuration files
-│   └── ...
-├── resources/           # Frontend (React) inside resources/js
-│   ├── js/              # React source code
-│   │   ├── components/  # UI components (buttons, cards, etc.)
-│   │   ├── pages/       # Pages (Home, Login, etc.)
-│   │   ├── App.js       # Main app component
-│   │   └── index.js     # Entry point for React app
-│   └── views/           # Blade views for Laravel
-├── routes/              # Laravel API & web routes
-├── public/              # Public assets (images, CSS)
-├── storage/             # Storage files (logs, uploads)
-├── tests/               # Feature and Unit tests
-├── .env                 # Environment configuration
-└── README.md            # Project documentation
+| Component | Is Deployed? | Is Dockerized? | Unit Tests Added?  | Is AI feature implemented? |
+| --------- | ------------ | -------------- | ------------------ | -------------------------- |
+| Backend   | No         | Yes     | No  | No       |
+| Frontend  | No          | Yes      | Yes        | No                     |
 
+---
+## 9. Contribution Table
 
-```
-## 👥 Team
+| Metric                        | Total | Backend | Frontend | Wasif                                                                                                                                                                                                                                                  | Rafi                                                                                                                                                                                                                                                  | Hridoy                                                                                                                                                                                                                                               | Meem                                                                                                                                                                                                                                                 |
+| ----------------------------- | ----- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Issues Solved                 | TBD   | TBD     | TBD      | TBD                                                                                                                                                                                                                                                     | TBD                                                                                                                                                                                                                                                     | TBD                                                                                                                                                                                                                                                     | TBD                                                                                                                                                                                                                                                     |
+| WakaTime Contribution (Hours) | TBD   | TBD     | TBD      | [![wakatime](https://wakatime.com/badge/github/MdWasifAli99/Aust-HiveNet.svg)](https://wakatime.com/badge/github/MdWasifAli99/Aust-HiveNet) |  [![wakatime](https://wakatime.com/badge/user/f5296c65-f0bc-4c44-9688-6b89e820da8b/project/71a91981-de96-4473-9b5a-5a4d9a792acd.svg)](https://wakatime.com/badge/user/f5296c65-f0bc-4c44-9688-6b89e820da8b/project/71a91981-de96-4473-9b5a-5a4d9a792acd) |[![wakatime](https://wakatime.com/badge/user/c0eb3a4c-6b10-43ca-9489-537dacbac401/project/a4afd59a-463e-4bfd-9e1e-bf53cc56a622.svg)](https://wakatime.com/badge/user/c0eb3a4c-6b10-43ca-9489-537dacbac401/project/a4afd59a-463e-4bfd-9e1e-bf53cc56a622)| [![wakatime](https://wakatime.com/badge/user/119f505c-cbde-4768-9400-0f9daac44200/project/4cc15319-388a-465c-9f1d-2113f8200be7.svg)](https://wakatime.com/badge/user/119f505c-cbde-4768-9400-0f9daac44200/project/4cc15319-388a-465c-9f1d-2113f8200be7) |
+| Percent Contribution (%)      | TBD   | TBD     | TBD      | TBD                                                                                                                                                                                                                                                     | TBD                                                                                                                                                                                                                                                     | TBD                                                                                                                                                                                                                                                     | TBD                                                                                                                                                                                                                                                     |
 
-| Name                 | ID           | GitHub / Portfolio |
-|----------------------|--------------|---------------------|
-| Md. Wasif Ali       | 20220204054  | [GitHub](https://github.com/MdWasifAli07) |
-| Hasibuzzaman Khan Rafi  | 20220204055 | [GitHub](https://github.com/Rafi007mr) |
-| Hridoy Pranto | 20220204059  | [GitHub](https://github.com/Hridoy992) |
-| Ma-Huan Sheikh Meem | 20220204070  | [GitHub](https://github.com/member3) |
+---
+## 10. Screenshots
+
+### 🏠 Login page
+![login](../screenshots/login.png)
+
+### 🏠 Signup page
+![signup](../screenshots/signup.png)
+
+### 🏠 Admin Dashboard
+![admin](../screenshots/adminpanel.png)
+
+### 🏠 Admin Dashboard (event section)
+![event](../screenshots/admin-event.png)
+
+### 🏠 Kanban
+![kanban](../screenshots/Kanban.png)
+---
+
+## 11. Limitations / Known Issues  
+- AI chatbot integration was not completed due to technical challenges.  
+- Some minor UI responsiveness issues on certain mobile devices.  
+- Unit tests coverage is limited, especially on backend.  
+- Deployment of frontend and backend is currently pending due to hosting challenges.  
