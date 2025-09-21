@@ -143,7 +143,8 @@ php artisan serve
 ---
 ## 10. Screenshots
 
-_Include screenshots of the admin dashboard, storefront, POS, and delivery kanban._
+### 🏠 Login page
+![Home](./screenshots/homepage.png)
 
 ---
 
