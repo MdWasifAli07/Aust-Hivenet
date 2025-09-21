@@ -18,6 +18,14 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/aboutus', function () {
+    return Inertia::render('AboutUs'); // This will render the AboutUs component in React
+});
+
+Route::get('/events', function () {
+    return Inertia::render('Events'); // This will render the AboutUs component in React
+});
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
