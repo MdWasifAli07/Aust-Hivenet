@@ -1,61 +1,166 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# AUST HiveNet: A Unified Club & Event Management Platform
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Team Members:**
+- Md. Wasif Ali | wasif.cse.20220204054@aust.edu
+- Hasibuzzaman Khan Rafi | hasibuzzaman.cse.20220204055@aust.edu
+- Hridoy Pranto | hridoy.cse.20220204059@aust.edu
+- Ma-Huan Sheikh Meem | mahuan.cse.20220204070@aust.edu
 
-## About Laravel
+**Project Live Link:** [Not Deployed]  
+**Recorded video:** [Insert URL] (Optional)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Table of Contents
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+1. [Project Description](#1-project-description)
+2. [Workflow Overview](#2-workflow-overview)
+3. [Main Features](#3-main-features)
+4. [Technologies Used](#4-technologies-used)
+5. [System Architecture](#5-system-architecture)
+6. [Setup Guidelines](#6-setup-guidelines)
+    - [Backend](#backend)
+7. [Running the Application](#7-running-the-application)
+8. [Deployment Status & Tests](#8-deployment-status--tests)
+9. [Contribution Table](#9-contribution-table)
+10. [Screenshots](#10-screenshots)
+11. [Limitations / Known Issues](#11-limitations--known-issues)
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 1. Project Description
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+**AUST HiveNet** is a full-stack platform developed as a course project for **CSE 3100**. The goal of the platform is to unify all AUST clubs and events under one digital platform where students can:
+- Browse and follow clubs, receive notifications, and join events.
+- Interact with clubs directly for event updates.
+- Admins can manage event posts, notifications, and club members.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+This platform enhances engagement, communication, and event participation for students, clubs, and administrators. 
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 2. Workflow Overview
 
-### Premium Partners
+The system architecture is designed as a full-stack solution with separate workflows for both frontend and backend:
+- **Frontend (React.js)**: Students interact with the system, register for events, and receive notifications.
+- **Backend (Laravel)**: Clubs post events, manage members, and track participation.
+- **Admin Panel (Filament)**: Admins and super admins manage the platform, including content moderation and user roles.
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+## 3. Main Features
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### ✅ Student-Side:
+- Browse all clubs and upcoming events
+- Follow clubs and set interest preferences
+- Get event notifications and reminders
+- Register for events directly from the platform
+- Chat with clubs (AI-integrated chatbot – failed to implement)
 
-## Code of Conduct
+### ✅ Club/Admin-Side:
+- Post events and manage announcements
+- Manage club members and track participation
+- Send notifications to followers
+- Super Admin can moderate all content, events, and users
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+## 4. Technologies Used
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- **Frontend:** React.js, Tailwind CSS, ShadCN UI
+- **Backend:** Laravel, Laravel Breeze (authentication), Filament (admin panel), Filament Shield (roles and permissions)
+- **Database:** MySQL (hosted on Railway)
+- **DevOps & Tools:** Docker for containerization, GitHub Actions for CI/CD, Postman for API testing
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 5. System Architecture
+
+The system operates with a clear separation between frontend, backend, and database. Here is a breakdown:
+- **Frontend (React.js):** Communicates with the Laravel backend via RESTful APIs to handle events, notifications, and user interactions.
+- **Backend (Laravel):** Handles all business logic, user authentication, event posting, and notification management.
+- **Database (MySQL):** Stores student, club, event, and user data, hosted on Railway for scalability.
+- **Admin Panel (Filament):** Admins use Filament for managing users, roles, and events.
+
+---
+
+## 6. Setup Guidelines  
+
+### Backend  
+```bash
+# Clone the repository
+git clone https://github.com/MdWasifAli07/Aust-Hivenet.git
+cd Aust-Hivenet/hivenet
+
+# Install Composer dependencies
+composer install
+
+# Setup environment variables
+cp .env.example .env
+# Edit .env to configure database and other settings
+
+# Generate application key
+php artisan key:generate
+
+# Run migrations
+php artisan migrate
+
+# Install Laravel Breeze (if not already installed)
+composer require laravel/breeze --dev
+php artisan breeze:install
+
+# Install npm dependencies and build assets
+npm install
+npm run dev
+
+# Run backend server
+php artisan serve
+
+```
+## 7. Running the Application  
+- Start the backend server with `php artisan serve` (default: http://localhost:8000)  
+- Start the frontend development server with `npm run dev` (default: http://localhost:5173)  
+- Access the frontend URL in your browser to use the platform locally.  
+
+---  
+
+## 8. Deployment Status & Tests  
+
+| Component | Is Deployed? | Is Dockerized? | Unit Tests Added?  | Is AI feature implemented? |
+| --------- | ------------ | -------------- | ------------------ | -------------------------- |
+| Backend   | No         | Yes     | No  | No       |
+| Frontend  | No          | Yes      | Yes        | No                     |
+
+---
+## 9. Contribution Table
+
+| Metric                        | Total | Backend | Frontend | Wasif                                                                                                                                                                                                                                                  | Rafi                                                                                                                                                                                                                                                  | Hridoy                                                                                                                                                                                                                                               | Meem                                                                                                                                                                                                                                                 |
+| ----------------------------- | ----- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Issues Solved                 | TBD   | TBD     | TBD      | TBD                                                                                                                                                                                                                                                     | TBD                                                                                                                                                                                                                                                     | TBD                                                                                                                                                                                                                                                     | TBD                                                                                                                                                                                                                                                     |
+| WakaTime Contribution (Hours) | TBD   | TBD     | TBD      | [![wakatime](https://wakatime.com/badge/github/MdWasifAli99/Aust-HiveNet.svg)](https://wakatime.com/badge/github/MdWasifAli99/Aust-HiveNet) |  [![wakatime](https://wakatime.com/badge/user/f5296c65-f0bc-4c44-9688-6b89e820da8b/project/71a91981-de96-4473-9b5a-5a4d9a792acd.svg)](https://wakatime.com/badge/user/f5296c65-f0bc-4c44-9688-6b89e820da8b/project/71a91981-de96-4473-9b5a-5a4d9a792acd) |[![wakatime](https://wakatime.com/badge/user/c0eb3a4c-6b10-43ca-9489-537dacbac401/project/a4afd59a-463e-4bfd-9e1e-bf53cc56a622.svg)](https://wakatime.com/badge/user/c0eb3a4c-6b10-43ca-9489-537dacbac401/project/a4afd59a-463e-4bfd-9e1e-bf53cc56a622)| [![wakatime](https://wakatime.com/badge/user/119f505c-cbde-4768-9400-0f9daac44200/project/4cc15319-388a-465c-9f1d-2113f8200be7.svg)](https://wakatime.com/badge/user/119f505c-cbde-4768-9400-0f9daac44200/project/4cc15319-388a-465c-9f1d-2113f8200be7) |
+| Percent Contribution (%)      | TBD   | TBD     | TBD      | TBD                                                                                                                                                                                                                                                     | TBD                                                                                                                                                                                                                                                     | TBD                                                                                                                                                                                                                                                     | TBD                                                                                                                                                                                                                                                     |
+
+---
+## 10. Screenshots
+
+### 🏠 Login page
+![login](../screenshots/login.png)
+
+### 🏠 Signup page
+![signup](../screenshots/signup.png)
+
+### 🏠 Admin Dashboard
+![admin](../screenshots/adminpanel.png)
+
+### 🏠 Admin Dashboard (event section)
+![event](../screenshots/admin-event.png)
+
+### 🏠 Kanban
+![kanban](../screenshots/Kanban.png)
+---
+
+## 11. Limitations / Known Issues  
+- AI chatbot integration was not completed due to technical challenges.  
+- Some minor UI responsiveness issues on certain mobile devices.  
+- Unit tests coverage is limited, especially on backend.  
+- Deployment of frontend and backend is currently pending due to hosting challenges.  
