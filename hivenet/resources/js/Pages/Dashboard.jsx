@@ -4,7 +4,7 @@ import { Head, Link, usePage } from "@inertiajs/react";
 
 // shadcn/ui bits
 import { Button } from "@/Components/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/Components/card";
 import { Input } from "@/Components/input";
 import {
   Sheet,
@@ -14,13 +14,12 @@ import {
   SheetTrigger,
 } from "@/Components/sheet";
 
-// icons
+// icons (Settings removed)
 import {
   Menu,
   CalendarDays,
   Star,
   Users,
-  Settings,
   User,
   LogOut,
   Search,
@@ -29,13 +28,12 @@ import {
 export default function Dashboard() {
   const page = usePage();
 
-  // Sidebar config
+  // Sidebar config (Settings entry removed)
   const nav = [
     { label: "My Events", href: "/events", icon: CalendarDays },
     { label: "Favourites", href: "/favorites", icon: Star },
     { label: "My Clubs", href: "/my-clubs", icon: Users },
     { divider: true },
-    { label: "Settings", href: "/settings", icon: Settings },
     {
       label: "Profile",
       href: typeof route === "function" ? route("profile.edit") : "/profile",
