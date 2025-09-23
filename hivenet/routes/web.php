@@ -14,22 +14,34 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
+// Public pages
 Route::get('/aboutus', function () {
-    return Inertia::render('AboutUs'); // This will render the AboutUs component in React
-});
+    return Inertia::render('AboutUs');
+})->name('aboutus');
 
-Route::get('/events', function () {
-    return Inertia::render('Events'); // This will render the AboutUs component in React
-});
+// App pages (auth + verified)
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/dashboard', fn() => Inertia::render('Dashboard'))->name('dashboard');
 
-Route::middleware('auth')->group(function () {
+    // Events list + details
+    Route::get('/events', fn() => Inertia::render('Events'))->name('events.index');
+    Route::get('/events/{id}', fn(string $id) => Inertia::render('EventDetails', [
+        'eventId' => $id,
+    ]))->name('events.show');
+
+    // Favourites (♥)
+    Route::get('/favorites', fn() => Inertia::render('Favourites'))->name('favorites.index');
+
+    // My Clubs + Club details
+    Route::get('/my-clubs', fn() => Inertia::render('MyClubs'))->name('clubs.mine');
+    Route::get('/clubs/{slug}', fn(string $slug) => Inertia::render('ClubDetails', [
+        'slug' => $slug,
+    ]))->name('clubs.show');
+
+    // Profile
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
