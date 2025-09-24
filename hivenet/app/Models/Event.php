@@ -44,6 +44,11 @@ class Event extends Model
         return $this->hasMany(EventParticipation::class);
     }
 
+     public function userInteractions(): HasMany
+    {
+        return $this->hasMany(UserEventInteraction::class);
+    }
+
     public function getAvailableSpacesAttribute()
     {
         if (is_null($this->max_participants)) {
