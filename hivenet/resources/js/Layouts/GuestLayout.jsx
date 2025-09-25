@@ -23,6 +23,9 @@ export default function GuestLayout({ children }) {
       <div className="relative z-30 w-full mt-12"> {/* Increased margin-top for footer */}
         <Footer /> {/* Add the Footer component here */}
       </div>
+
+   
+
     </div>
   );
 }

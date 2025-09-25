@@ -1,12 +1,12 @@
 import React from "react";
-import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
+import GuestLayout from '@/Layouts/GuestLayout';
 import { Head, Link } from "@inertiajs/react";
 
 
 export default function MyClubs({ clubs = [] }) {
 const data = clubs.length ? clubs : SAMPLE_CLUBS;
 return (
-<AuthenticatedLayout header={<h2 className="text-xl font-semibold text-white">My Clubs</h2>}>
+<GuestLayout header={<h2 className="text-xl font-semibold text-white">My Clubs</h2>}>
 <Head title="My Clubs" />
 <div className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -27,7 +27,7 @@ return (
 ))}
 </div>
 </div>
-</AuthenticatedLayout>
+</GuestLayout>
 );
 }
 

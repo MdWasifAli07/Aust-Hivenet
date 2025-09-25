@@ -9,6 +9,10 @@ export default function FloatingNavDemo() {
     { name: "Home", link: "/", icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" /> },
     { name: "Events", link: "/events", icon: <IconCalendar className="h-4 w-4 text-neutral-500 dark:text-white" /> },
     { name: "About Us", link: "/aboutus", icon: <IconInfoCircle className="h-4 w-4 text-neutral-500 dark:text-white" /> },
+     { name: "My Favourites", link: "/favourites", icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" /> },
+     { name: "Going", link: "/going", icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" /> },
+  
+  
   ];
 
   const { props } = usePage();
