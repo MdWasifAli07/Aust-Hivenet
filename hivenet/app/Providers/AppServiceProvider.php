@@ -1,8 +1,11 @@
 <?php
 
+
 namespace App\Providers;
 use App\Http\Responses\LoginResponse;
 use Laravel\Fortify\Contracts\LoginResponse as LoginResponseContract;
+// app/Providers/AppServiceProvider.php
+use Illuminate\Support\Facades\URL;
 
 
 use Illuminate\Support\Facades\Vite;
@@ -24,6 +27,12 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Vite::prefetch(concurrency: 3);
+
+        
+    if (config('app.env') === 'production') {
+        URL::forceScheme('https');
+        URL::forceRootUrl(config('app.url'));
+    }
 
           
     }
