@@ -1,0 +1,30 @@
+# Tell Railway/Nixpacks exactly what to install
+[phases.setup]
+nixPkgs = [
+  "php83",
+  "php83Extensions.intl",
+  "php83Extensions.pdo_mysql",
+  "php83Extensions.mbstring",
+  "php83Extensions.zip",
+  "php83Extensions.exif",
+  "php83Extensions.gd",
+  "nodejs_22",
+  "composer"
+]
+
+# Optional: speed up composer cache etc. (safe to leave empty)
+[phases.install]
+# cmds = []
+
+# Build your Vite assets
+[phases.build]
+cmds = [
+  "composer install --no-dev --prefer-dist --optimize-autoloader",
+  "npm ci",
+  "npm run build",
+  "php artisan storage:link || true"
+]
+
+# How to start the app on Railway (listens on $PORT)
+[start]
+cmd = "php artisan migrate --force && php -S 0.0.0.0:$PORT -t public"
