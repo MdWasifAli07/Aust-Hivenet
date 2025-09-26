@@ -1,41 +1,50 @@
-FROM php:8.3.24-fpm
+# --- build frontend (Node 22) ---
+FROM node:22 AS assets
+WORKDIR /app
+COPY package*.json vite.config.js ./
+RUN npm ci
+COPY resources ./resources
+RUN npm run build
 
-# Set working directory
-WORKDIR /var/www/html
+# --- install PHP deps (no-dev) ---
+FROM php:8.3-fpm AS vendor
+RUN apt-get update && apt-get install -y git zip unzip libicu-dev \
+ && docker-php-ext-install intl pdo_mysql \
+ && rm -rf /var/lib/apt/lists/*
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+WORKDIR /app
+COPY composer.json composer.lock ./
+RUN composer install --no-dev --prefer-dist --no-interaction --optimize-autoloader
 
-# Install dependencies
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    libpng-dev \
-    libjpeg62-turbo-dev \
-    libfreetype6-dev \
-    locales \
-    zip \
-    jpegoptim optipng pngquant gifsicle \
-    vim \
-    unzip \
-    git \
-    curl \
-    libzip-dev
+# --- final runtime: Nginx + PHP-FPM in one image ---
+FROM webdevops/php-nginx:8.3
+ENV WEB_DOCUMENT_ROOT=/app/public
+WORKDIR /app
 
-# Clear cache
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+# extra PHP extensions you use
+RUN apt-get update && apt-get install -y libzip-dev libpng-dev libxml2-dev \
+ && docker-php-ext-install bcmath exif zip gd \
+ && rm -rf /var/lib/apt/lists/*
 
-# Install extensions
-RUN docker-php-ext-install pdo_mysql zip exif pcntl
-RUN docker-php-ext-configure gd --with-freetype --with-jpeg
-RUN docker-php-ext-install gd
+# app code + vendor + built assets
+COPY . .
+COPY --from=vendor /app/vendor ./vendor
+COPY --from=assets /app/public/build ./public/build
 
-# Install composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+# opcache for prod
+RUN set -eux; \
+  mkdir -p /usr/local/etc/php/conf.d; \
+  { echo 'opcache.enable=1'; echo 'opcache.enable_cli=1'; \
+    echo 'opcache.validate_timestamps=0'; echo 'opcache.memory_consumption=192'; \
+    echo 'opcache.max_accelerated_files=20000'; } \
+  > /usr/local/etc/php/conf.d/opcache.ini
 
-# Copy existing application directory contents
-COPY . /var/www/html
+# writable dirs
+RUN chown -R application:application storage bootstrap/cache \
+ && chmod -R ug+rwX storage bootstrap/cache
 
-# Copy and run composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-RUN composer install --no-interaction
+# cache config/routes/views (and optional migrations) on boot
+COPY docker/entrypoint.sh /docker-entrypoint-init.d/10-artisan.sh
+RUN chmod +x /docker-entrypoint-init.d/10-artisan.sh
 
-# Expose port 9000 and start php-fpm server
-EXPOSE 9000
-CMD ["php-fpm"]
+EXPOSE 80

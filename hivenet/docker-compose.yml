@@ -1,45 +1,63 @@
-version: "3.8"
-
-networks:
-  laravel-network:
-    driver: bridge
+version: "3.9"
 
 services:
   app:
     build:
       context: .
-      dockerfile: Dockerfile
-    depends_on:
-      mysql:
-        condition: service_healthy
-    restart: on-failure
-    entrypoint: php artisan serve --host=0.0.0.0 --port=8000
-    environment:
-      - DB_HOST=mysql
-      - DB_PORT=3306
-      - DB_DATABASE=laravel
-      - DB_USERNAME=root
-      - DB_PASSWORD=
-      - OCTANE_SERVER=frankenphp
-    ports:
-      - "8001:8000"
-    stdin_open: true
+      dockerfile: docker/php/Dockerfile
+    container_name: php-fpm
     volumes:
-      - .:/app
-    networks:
-      - laravel-network
+      - ./:/var/www/html
+    env_file:
+      - .env
+    depends_on:
+      - db
+    networks: [laranet]
 
-  mysql:
-    image: mysql:latest
+  web:
+    image: nginx:alpine
+    container_name: nginx
+    ports:
+      - "8000:80"
+    volumes:
+      - ./:/var/www/html
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - app
+    networks: [laranet]
+
+  
+  
+  
+    node:
+    image: node:22        # was node:20
+    container_name: vite
+    working_dir: /var/www/html
+    command: sh -c "npm ci && npm run dev -- --host 0.0.0.0 --port 5173"
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./:/var/www/html
+      - node_modules:/var/www/html/node_modules
+    networks: [laranet]
+
+
+  db:
+    image: mysql:8.0
+    container_name: mysql
     environment:
-      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
-      - MYSQL_DATABASE=laravel
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ${DB_DATABASE:-laravel}
+      MYSQL_USER: ${DB_USERNAME:-laravel}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-secret}
     ports:
       - "3306:3306"
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping"]
-      interval: 10s
-      timeout: 5s
-      retries: 3
-    networks:
-      - laravel-network
+    volumes:
+      - db-data:/var/lib/mysql
+    networks: [laranet]
+
+networks:
+  laranet: {}
+
+volumes:
+  db-data: {}
